@@ -27,7 +27,28 @@ function swapValues(positionA, positionB, array) {
 }
 
 // Using a set as intermediate data structure
-// Copy the array to a set and for each position of the new array, pop the set's minimum value
+// PS: It removes duplicates
+function sortUsingSet(arrayToBeSorted) {
+  // Copy the array to a set
+  const valuesInSet = new Set(arrayToBeSorted);
+  const originalSetSize = valuesInSet.size;
+  const resultingArray = [];
+  // For each position of the resulting array, pop the set's minimum value
+  for (let n = 0; n < originalSetSize; n++) {
+    let minimumValue;
+    // Find set's minimum value
+    for(let currentValue of valuesInSet.values()) {
+      if (minimumValue === undefined || currentValue <= minimumValue) {
+        minimumValue = currentValue;
+      }
+    }
+    // Set the minimum value to a new position in the resulting array...
+    resultingArray[n] = minimumValue;
+    // And remove it from the set
+    valuesInSet.delete(minimumValue);
+  }
+  return resultingArray;
+}
 
 const arrayToBeSorted = [8, 2, 4, 9, 1, 3, 9, 6, 5, 5, 4, 1, 8, 6, 7];
 console.log('Array to be sorted:');
@@ -36,4 +57,13 @@ console.log(arrayToBeSorted);
 const sortedArray = sort(arrayToBeSorted);
 console.log('Sorted array:');
 console.log(sortedArray);
+
+const arrayToBeSortedNoDuplicates = [8, 2, 4, 9, 1, 3, 6, 5, 7];
+console.log('Array to be sorted (no duplicates):');
+console.log(arrayToBeSortedNoDuplicates);
+
+const sortedUsingSet = sortUsingSet(arrayToBeSortedNoDuplicates);
+// const sortedUsingSet = sortUsingSet(arrayToBeSorted);
+console.log('Sorted array using a set:');
+console.log(sortedUsingSet);
 
