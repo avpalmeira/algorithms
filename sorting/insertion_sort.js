@@ -24,7 +24,9 @@ function sort(arrayToBeSorted) {
 }
 
 const arrayToBeSorted = [8, 2, 4, 9, 1, 3, 9, 6, 5, 5, 4, 1, 8, 6, 7];
-const sortedArray = sort(arrayToBeSorted);
+console.log('Array to be sorted:');
+console.log(arrayToBeSorted);
 
+const sortedArray = sort(arrayToBeSorted);
 console.log('Sorted array:');
 console.log(sortedArray);
