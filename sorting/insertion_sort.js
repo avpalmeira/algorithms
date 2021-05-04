@@ -1,6 +1,6 @@
 /* Insertion Sort Algorithm - Ascending Order */
 function sort(arrayToBeSorted) {
-  const array = arrayToBeSorted;
+  const array = [...arrayToBeSorted];
 
   // Iterate over all items in the array saving the reference to current item
   // ! In the insertion sort algorithm, we judge the first item of array to be sorted already
@@ -30,3 +30,4 @@ console.log(arrayToBeSorted);
 const sortedArray = sort(arrayToBeSorted);
 console.log('Sorted array:');
 console.log(sortedArray);
+

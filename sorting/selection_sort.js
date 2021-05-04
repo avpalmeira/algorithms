@@ -1,7 +1,7 @@
 /* Selection Sort - Ascending Order */
 // Without using a set as intermediate data structure
 function sort(arrayToBeSorted) {
-  const array = arrayToBeSorted;
+  const array = [...arrayToBeSorted];
   // For each N position of the new array, select the Nth minimum value to fullfil it
   for (let n = 0; n < array.length; n++) {
     let currentMinimumIndex = n;
@@ -27,7 +27,7 @@ function swapValues(positionA, positionB, array) {
 }
 
 // Using a set as intermediate data structure
-// PS: It removes duplicates
+// PS: It removes duplicates from result
 function sortUsingSet(arrayToBeSorted) {
   // Copy the array to a set
   const valuesInSet = new Set(arrayToBeSorted);
@@ -58,12 +58,10 @@ const sortedArray = sort(arrayToBeSorted);
 console.log('Sorted array:');
 console.log(sortedArray);
 
-const arrayToBeSortedNoDuplicates = [8, 2, 4, 9, 1, 3, 6, 5, 7];
-console.log('Array to be sorted (no duplicates):');
-console.log(arrayToBeSortedNoDuplicates);
+console.log('Array to be sorted:');
+console.log(arrayToBeSorted);
 
-const sortedUsingSet = sortUsingSet(arrayToBeSortedNoDuplicates);
-// const sortedUsingSet = sortUsingSet(arrayToBeSorted);
+const sortedUsingSet = sortUsingSet(arrayToBeSorted);
 console.log('Sorted array using a set:');
 console.log(sortedUsingSet);
 

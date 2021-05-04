@@ -1,6 +1,6 @@
 /* Bubble Sort - Ascending Order */
 function sort(arrayToBeSorted) {
-  const array = arrayToBeSorted;
+  const array = [...arrayToBeSorted];
   let nextBubbledItemIndex = array.length - 1;
 
   // Iterate over all itens in the array comparing them by pairs, while lastBubbledItemIndex != 0;
@@ -31,3 +31,4 @@ console.log(arrayToBeSorted);
 const sortedArray = sort(arrayToBeSorted);
 console.log('Sorted array:');
 console.log(sortedArray);
+
